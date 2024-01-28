@@ -2,11 +2,66 @@
 <html>
     <head>
         <script src="id.class.js"></script>
+        <style>
+            .pink {
+                border: 1px solid red;
+                background-color: pink;
+                color: red;
+            }
+
+            .green {
+                border: 2px solid forestgreen;
+                background-color: lightgreen;
+                color: darkgreen;
+            }
+        </style>
     </head>
     <body>
         <div id="card"></div>
-
+        <input id="toPink" type="button" value="Pink" />
+        <input id="toGreen" type="button" value="Green" />
         <script>
+            async function generateIdCard() {
+                let response = await fetch("https://randomuser.me/api")
+                let data = await response.json();
+
+                let id = data.results[0];
+
+                let firstname = id.name.first;
+                let lastname = id.name.last;
+                let dateOfBirth = id.dob.date;
+                let gender = id.gender
+                let country = id.nat
+
+                let idData = new Id(firstname, lastname, dateOfBirth, gender, country)
+                drawCard(idData);
+            }
+
+            function drawCard(idData) {
+                let card = document.getElementById("card");
+
+                let h3 = document.createElement("h3");
+                h3.innerText = idData.firstname + " " + idData.lastname.toUpperCase();
+
+                let genderAndDob = document.createElement("p")
+                genderAndDob.innerHTML = idData.gender + " | DOB: " + idData.dateOfBirth;
+
+                let countryP = document.createElement("p");
+                countryP.innerText = "Country: " + idData.country
+
+                card.appendChild(h3);
+                card.appendChild(genderAndDob)
+                card.appendChild(countryP)
+            }
+
+            let card = document.getElementById("card")
+            let toPink = document.getElementById("toPink");
+            let toGreen = document.getElementById("toGreen");
+
+            toPink.addEventListener("click", (event) => card.setAttribute("class", "pink"));
+            toGreen.addEventListener("click", (event) => card.setAttribute("class", "green"));
+
+            generateIdCard();
         </script>
     </body>
 </html>
