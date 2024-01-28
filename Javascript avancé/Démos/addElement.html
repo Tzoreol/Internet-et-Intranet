@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <input id="add" type="button" value="Ajouter une div" />
+        <div id="target"></div>
+    </body>
+
+    <script>
+        let add = document.getElementById("add");
+        let target = document.getElementById("target")
+        
+        add.addEventListener("click", function() {
+            let div = document.createElement("div");
+            div.innerText = "Je viens d'être ajoutée"
+            div.setAttribute("style", "border: 1px solid black")
+
+            target.appendChild(div)
+        });
+    </script>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <div id="one" class="green">Je suis la div 1</div>
+        <div id="two" class="green">Je suis la div 2</div>
+        <div id="three">Je suis la div 3</div>
+    </body>
+
+    <script>
+        let one = document.getElementById("one");
+        let divs = document.getElementsByTagName("div")
+        let greens = document.getElementsByClassName("green")
+        let two = document.querySelector("div#two")
+
+        one.innerText = "Le texte de la div 1 a été changé";
+        two.innerHTML = "<textarea></textarea>";
+
+        for(const div of divs) {
+            console.log(div)
+            div.setAttribute("style", "border:3px solid black")
+        }
+
+        for(const green of greens) {
+            green.setAttribute("style", "background-color:green")
+        };
+    </script>
+</html>

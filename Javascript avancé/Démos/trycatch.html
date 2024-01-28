@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>
+            <label for="result">Résultat :</label>
+            <select id="result">
+                <option value="true">Réussite</option>
+                <option value="false">Echec</option>
+            </select>
+        </p>
+        <p>
+            <input type="button" id="tryCatch" value="Try/Catch" />
+        </p>
+        <div id="output" style="background-color: black; color: white; font-family: 'Courier New', Courier, monospace;">
+        </div>
+    </body>
+
+    <script>
+        let output = document.getElementById("output")
+        let tryCatch = document.getElementById("tryCatch")
+
+        function fetchData() {
+            let success = document.getElementById("result").value == "true" ? true : false;
+
+            return new Promise((resolve, reject) => {
+                if(success) {
+                    resolve("Tout s'est bien passé")
+                } else {
+                    reject("Quelque chose s'est mal passé")
+                }
+            })
+        }
+
+        async function doTryCatch() {
+            try {
+                let data = await fetchData();
+                output.innerHTML = "Try: " + data
+            } catch(error) {
+                output.innerHTML = "Catch: " + error
+            }
+        }
+
+        tryCatch.addEventListener("click", (event) => doTryCatch());
+    </script>
+</html>

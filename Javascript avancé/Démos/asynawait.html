@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>
+            <input type="button" id="send" value="Envoyer" />
+        </p>
+        <div id="output" style="background-color: black; color: white; font-family: 'Courier New', Courier, monospace;">
+        </div>
+    </body>
+
+    <script>
+        let output = document.getElementById("output");
+
+        function doLater() {
+            return new Promise((resolve) => {
+                setTimeout(() => resolve("Je suis asynchrone"),
+                2000);
+            })
+        }
+
+        function doEveryThingHere(data) {
+            let arr = data.split(' ')
+
+            arr.forEach(element => {
+               output.innerHTML += element + '<br />' 
+            });
+        }
+
+        function asyncCall() {
+            doLater().then((result) => doEveryThingHere(result))
+        }
+
+        /*async function asyncCall() {
+            let data = await doLater();
+
+            let arr = data.split(' ')
+            arr.forEach(element => {
+               output.innerHTML += element + '<br />' 
+            });
+        }*/
+
+        document.getElementById("send").addEventListener("click", (event) => {
+            asyncCall();
+        })
+    </script>
+</html>

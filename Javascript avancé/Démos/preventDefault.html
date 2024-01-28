@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <form action="preventDefault.html">
+            <input type="submit" id="button" value="Changer"/>
+        </form>
+    </body>
+
+    <script>
+        let button = document.getElementById("button");
+        
+        button.addEventListener("click", function(event) {
+            event.preventDefault();
+            console.log(event)
+            button.value = "Nouveau texte";
+        });
+    </script>
+</html>

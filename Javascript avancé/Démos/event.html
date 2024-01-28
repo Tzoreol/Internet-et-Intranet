@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <div id="goingGreen">Passez sur moi !</div>
+    </body>
+
+    <script>
+        let goingGreen = document.getElementById("goingGreen");
+        
+        goingGreen.addEventListener("mouseover", function() {
+            this.setAttribute("style", "background-color: green")
+        });
+
+        goingGreen.addEventListener("mouseout", function() {
+            this.setAttribute("style", "background-color: white")
+        });
+    </script>
+</html>

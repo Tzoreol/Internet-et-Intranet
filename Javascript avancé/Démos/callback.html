@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>
+            <label for="message">Message :</label>
+            <input type="text" id="message" />
+        </p>
+        <p>
+            <label for="delay">Délai :</label>
+            <input type="number" id="delay" />
+        </p>
+        <p>
+            <input type="button" id="send" value="Envoyer" />
+        </p>
+        <div id="output" style="background-color: black; color: white; font-family: 'Courier New', Courier, monospace;">
+        </div>
+    </body>
+
+    <script>
+        let output = document.getElementById("output");
+
+        function doLater(delayedFunction) {
+            let message = document.getElementById("message").value;
+            let delay = document.getElementById("delay").value;
+
+            console.log(`Will display ${message} in ${delay} ms`)
+            setTimeout(() => delayedFunction(message), delay);
+            console.log("I'm after setTimeout");
+        }
+
+        document.getElementById("send").addEventListener("click", (event) => {
+            doLater((data) => output.innerHTML = data)
+        })
+    </script>
+</html>
