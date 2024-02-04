@@ -35,6 +35,40 @@
                 transform: translate(-50%, -50%);
             }
         </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+        <script>
+            function animateAndDecrement(timer) {
+                $('#time').text(timer);
+                $('#time').show();
+                $('#time').fadeOut(1000, function() {
+                    timer--;
+
+                    if(timer > 0) {
+                        animateAndDecrement(timer)
+                    } else {
+                        $('#countdown').slideUp(function() {
+                            $('#time').show();
+                            $('#countdown').removeClass('black').addClass('white');
+                            $('#countdown').show(0, function() {
+                                $('#time').css('font-size', 0)
+                                $('#time').text("Time's up");
+                                $('#time').animate({
+                                    'font-size': '75px'
+                                }, 2000);
+                            });
+                        });
+                    }
+                });
+            }
+
+            $(function() {
+                $('#start').on('click', function() {
+                    let timer = $('#timeToCountdown').val()
+                    animateAndDecrement(timer)
+                })
+            });
+        </script>
     </head>
     <input id="timeToCountdown" type="number"/>
     <button id="start">Start</button>
