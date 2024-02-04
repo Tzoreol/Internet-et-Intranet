@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Google font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+        <style>
+            #countdown {
+                font-family: 'Press Start 2P';
+                font-size: 25px;
+                height: 150px;
+                margin: 2em;
+                padding: 2em;
+                text-align: center;
+                position: relative;
+            }
+
+            #countdown.black {
+                background-color: black;
+                color: white;
+            }
+
+            #countdown.white {
+                background-color: white;
+                color: black;
+            }
+
+            #time {
+                left: 50%;
+                margin: 0;
+                position: absolute;
+                top: 50%;
+                transform: translate(-50%, -50%);
+            }
+        </style>
+    </head>
+    <input id="timeToCountdown" type="number"/>
+    <button id="start">Start</button>
+    <div id="countdown" class="black">
+        <span id="time"></span>
+    </div>
+</html>
