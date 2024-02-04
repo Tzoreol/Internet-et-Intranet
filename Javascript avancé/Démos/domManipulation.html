@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script>
+            $(function() {
+                $('#addClass').on('click', function() {
+                    $('#result').addClass('reversed')
+                });
+
+                $('#removeClass').on('click', function() {
+                    $('#result').removeClass('reversed')
+                })
+
+                $('#addBorder').on('click', function() {
+                    $('#result').css('border', "10px solid #AAA");
+                })
+
+                $('#empty').on('click', function() {
+                    $('#result').empty();
+                })
+
+                $('#html').on('click', function() {
+                    $('#result').html('<input type="password" value="Mot de passe" />');
+                })
+
+                $('#value').on('click', function() {
+                    alert($('input[type="password"]').val())
+                })
+            })
+        </script>
+
+        <style>
+            button {
+                font-size: 25px;
+            }
+
+            #result {
+                background-color: black;
+                color: white;
+                font-family: 'Courier New', Courier, monospace;
+                font-size: xx-large;
+                height: 250px;
+                margin-top: 1em;
+                width: 75%;
+            }
+
+            input {
+                font-size: xx-large;
+            }
+
+            .reversed {
+                background-color: white !important;
+                color: black !important;
+            }
+        </style>
+    </head>
+    <body>
+        <button id="addClass">J'ajoute la classe reversed</button>
+        <button id="removeClass">J'enlève la classe reversed</button>
+        <button id="addBorder">J'ajoute une bordure</button>
+        <button id="empty">Je vide le résultat</button>
+        <button id="html">J'ajoute un input</button>
+        <button id="value">Je donne le mot de passe</button>
+
+        <div id="result">Ici le résultat</div>
+    </body>
+</html>

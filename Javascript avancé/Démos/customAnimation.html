@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script>
+            $(function() {
+                $('button').click(function() {
+                    let duration = parseInt($('#duration').val());
+                    let easing = $('#easing').val();
+
+                    $('#linear').animate({
+                        'border-width': '25px',
+                        'heigth': '250px',
+                        'opacity': '.2',
+                        'width': '500px'
+                    },
+                    duration,
+                    'linear');
+
+                    $('#swing').animate({
+                        'border-width': '25px',
+                        'heigth': '250px',
+                        'opacity': '.2',
+                        'width': '500px'
+                    },
+                    duration,
+                    'swing');
+                });
+            })
+        </script>
+
+        <style>
+            button, p, input, div {
+                font-size: 25px;
+            }
+
+            .toAnimate {
+                background-color: red;
+                border: 1px solid black;
+                height: 50px;
+                margin-top: 1em;
+                width: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <p>
+            <label for="duration">Durée : </label>
+            <input type="number" id="duration" />
+        </p>
+        <button id="animate">Animer</button>
+
+        <div id="linear" class="toAnimate">Linear</div>
+        <div id="swing" class="toAnimate">Swing</div>
+    </body>
+</html>

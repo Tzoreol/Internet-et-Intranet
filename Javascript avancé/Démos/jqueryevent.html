@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script>
+            $(function() {
+                let button = $('button');
+                let input = $('input');
+                let result = $('#result')
+
+                input.on('change', function() {result.html('change')});
+                button.on('click', function() {result.html('click')});
+                button.on('dblclick', function() {result.html('dblclick')});
+                input.on('focus', function() {result.html('focus')});
+                button.on('mouseenter', function() {result.html('mouseenter')});
+                button.on('mouseout', function() {result.html('mouseout')});
+            })
+        </script>
+
+        <style>
+            button, input {
+                font-size: 60px;
+            }
+
+            #result {
+                background-color: black;
+                color: white;
+                font-family: 'Courier New', Courier, monospace;
+                font-size: xx-large;
+            }
+        </style>
+    </head>
+    <body>
+        <input type="text" />
+        <button>Click me!</button>
+        <div id="result"></div>
+    </body>
+</html>

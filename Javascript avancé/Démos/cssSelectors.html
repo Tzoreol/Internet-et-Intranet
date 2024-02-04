@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            div {
+                border: 1px solid black;
+                margin: 1em;
+            }
+
+            #redFont {
+                color: red;
+            }
+
+            .greenBg {
+                background-color: green;
+            }
+
+            p.xxlarge {
+                font-size: xx-large;
+            }
+
+            div .uppercase {
+                text-transform: uppercase;
+            }
+
+            input[type="text"] {
+                border: 3px solid cyan;
+            }
+        </style>
+    </head>
+    <body>
+        <div>Je suis une div sans id ni class</div>
+        <div id="redFont" class="greenBg">Je suis une div id redFont et class greenBg</div>
+        <div class="greenBg uppercase xxlarge">Je suis une div avec class green, uppercase et xxlarge</div>
+        <p class="xxlarge"> Je suis un p avec class xxlarge</p>
+        <div>
+            <p class="uppercase">Je suis un p dans une div avec class large</div>
+        </div>
+
+        <input type="text" value="Type text" />
+        <input type="password" value="Password" />
+    </body>
+</html>

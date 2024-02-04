@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script>
+            $(function() {
+                let myElement = $('#item-b');
+
+                myElement.parents('ul').css("border", "1px solid black");
+                myElement.parent().css("border-color", "red");
+                myElement.next().css('color', 'green');
+                myElement.children().css('font-weight', 'bold')
+                myElement.siblings().css('font-size', 'xx-large')
+            })
+        </script>
+    </head>
+    <body>
+        <ul id="level-1">
+            <li id="item-i">I</li>
+            <li id="item-ii">II
+                <ul id="level-2">
+                    <li id="item-a">A</li>
+                    <li id="item-b">B
+                        <ul id="level-3">
+                            <li id="item-1">1</li>
+                            <li id="item-2">2</li>
+                            <li id="item-3">3</li>
+                        </ul>
+                    </li>
+                    <li id="item-c">C</li>
+                </ul>
+            </li>
+            <li id="item-iii">III</li>
+        </ul>
+    </body>
+</html>

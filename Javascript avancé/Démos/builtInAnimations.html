@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script>
+            $(function() {
+                $('#show').on('click', function() {
+                    $('#result').show()
+                });
+
+                $('#hide').on('click', function() {
+                    $('#result').hide()
+                })
+
+                $('#toggle').on('click', function() {
+                    $('#result').toggle();
+                })
+
+                $('#fadeIn').on('click', function() {
+                    $('#result').fadeIn();
+                })
+
+                $('#fadeOut').on('click', function() {
+                    $('#result').fadeOut();
+                })
+
+                $('#toggleFade').on('click', function() {
+                    $('#result').fadeToggle()
+                })
+
+                $('#slideUp').on('click', function() {
+                    $('#result').slideUp();
+                })
+
+                $('#slideDown').on('click', function() {
+                    $('#result').slideDown();
+                })
+
+                $('#toggleSlide').on('click', function() {
+                    $('#result').slideToggle()
+                })
+            })
+        </script>
+
+        <style>
+            button {
+                font-size: 25px;
+            }
+
+            #result {
+                background-color: black;
+                color: white;
+                font-family: 'Courier New', Courier, monospace;
+                font-size: xx-large;
+                height: 250px;
+                margin-top: 1em;
+                width: 75%;
+            }
+        </style>
+    </head>
+    <body>
+        <button id="show">Show</button>
+        <button id="hide">Hide</button>
+        <button id="toggle">Toggle</button>
+        <button id="fadeIn">Fade in</button>
+        <button id="fadeOut">Fade out</button>
+        <button id="toggleFade">Toggle fade</button>
+        <button id="slideDown">Slide down</button>
+        <button id="slideUp">Slide up</button>
+        <button id="toggleSlide">Toggle slide</button>
+
+        <div id="result">Ici le résultat</div>
+    </body>
+</html>
