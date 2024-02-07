@@ -1,0 +1,125 @@
+.material-symbols-rounded {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 700,
+  'GRAD' 200,
+  'opsz' 48;
+  vertical-align: middle;
+}
+
+body {
+  background-color: rgb(248, 249, 250);
+  color: rgba(0, 0, 0, .87);
+}
+
+#weatherCards {
+  font-family: 'Noto Sans', sans-serif;
+}
+
+.card {
+  background-color: white;
+  border: 1px solid rgb(218, 220, 224);;
+  border-radius: 12px;
+  float: left;
+  margin: 1em;
+  padding: 1em;
+  text-align: center;
+  width: 150px;
+}
+
+.date {
+  border: 1px solid rgba(0, 0, 0, .87);
+  border-radius: 5px;
+  margin: auto;
+  margin-bottom: .5em;
+  max-width: 75%;
+  min-width: 50px;
+  padding: .2em;
+  text-transform: uppercase;
+}
+
+.temperatures {
+  font-weight: bold;
+  margin: .5em auto;
+}
+
+.minTemp {
+  color: #185ABC
+}
+
+.minTemp::after {
+  color: rgba(0, 0, 0, .87);
+  content: ' / ';
+}
+
+.maxTemp {
+  color: #A50E0E;
+}
+
+.wind {
+  margin-bottom: .5em;
+}
+
+.windDirection {
+  vertical-align: middle;
+}
+
+.windSpeed {
+  font-weight: bold;
+  padding-left: .3em;
+}
+
+.windSpeed::after {
+  content: ' km/h';
+  font-weight: 500;
+}
+
+.windGusts {
+  background-color: #A50E0E;
+  border-radius: 5px;
+  color: white;
+  padding: .2em;
+}
+
+#hourlyWeather {
+  width: 500px;
+  background-color: white;
+  border: 1px solid rgb(218, 220, 224);;
+  border-radius: 12px;
+  clear: both;
+  font-family: 'Noto Sans', sans-serif;
+  margin: auto;
+  padding: 1em;
+  text-align: center;
+}
+
+#hourlyWeather .date {
+  text-align: center
+}
+
+.hourText {
+  font-weight: bold;
+}
+
+#hourlyWeather .hour {
+  margin: auto;
+  padding: .5em 0;
+  width: 75%;
+}
+
+.hour:not(:last-child) {
+  border-bottom: 1px solid rgba(0, 0, 0, .87);
+}
+
+.hourTemperature, .precipitation {
+  padding: 0 .5em
+}
+
+.precipitation {
+  background-color: rgba(28,116,233,.33);
+  border-radius: 5px;
+  color: white;
+  display: inline-block;
+  margin: 0 .2em;
+  padding: .2em;
+}
