@@ -37,7 +37,7 @@
             fetchData()
                 .then(
                     (result) => output.innerHTML = "Then: " + result,
-                    (result) => output.innerHTML = "Then: " + result)
+                    (error) => output.innerHTML = "Then - error: " + error)
                 .catch((result) => output.innerHTML = "Catch: " + result)
         });
 

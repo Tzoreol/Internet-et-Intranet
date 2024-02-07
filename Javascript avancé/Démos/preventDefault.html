@@ -3,16 +3,24 @@
     <body>
         <form action="preventDefault.html">
             <input type="submit" id="button" value="Changer"/>
+            <input id="myInput" type="text" />
         </form>
     </body>
 
     <script>
         let button = document.getElementById("button");
+        let myInput = document.getElementById("myInput")
         
         button.addEventListener("click", function(event) {
             event.preventDefault();
             console.log(event)
             button.value = "Nouveau texte";
         });
+
+        myInput.addEventListener("keyup", function(event) {
+            event.preventDefault();
+            console.log(myInput.value)
+        });
+
     </script>
 </html>

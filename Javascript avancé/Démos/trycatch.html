@@ -35,8 +35,8 @@
             try {
                 let data = await fetchData();
                 output.innerHTML = "Try: " + data
-            } catch(error) {
-                output.innerHTML = "Catch: " + error
+            } catch {
+                output.innerHTML = "Catch: Unknown error"
             }
         }
 

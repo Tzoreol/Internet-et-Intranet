@@ -26,18 +26,18 @@
             });
         }
 
-        function asyncCall() {
+        /*function asyncCall() {
             doLater().then((result) => doEveryThingHere(result))
-        }
+        }*/
 
-        /*async function asyncCall() {
+        async function asyncCall() {
             let data = await doLater();
 
             let arr = data.split(' ')
             arr.forEach(element => {
                output.innerHTML += element + '<br />' 
             });
-        }*/
+        }
 
         document.getElementById("send").addEventListener("click", (event) => {
             asyncCall();

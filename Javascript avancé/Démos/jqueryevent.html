@@ -8,7 +8,9 @@
                 let input = $('input');
                 let result = $('#result')
 
-                input.on('change', function() {result.html('change')});
+                input.on('change', function() {
+                    result.html('change')
+                });
                 button.on('click', function() {result.html('click')});
                 button.on('dblclick', function() {result.html('dblclick')});
                 input.on('focus', function() {result.html('focus')});
